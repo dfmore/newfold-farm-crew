@@ -1,0 +1,12 @@
+{
+  "name": "newfold-farm-crew",
+  "version": "1.0.0",
+  "description": "Static site for a Peak District camping trip at Newfold Farm Edale, 1–4 May 2026.",
+  "scripts": {
+    "build:assets": "node scripts/render-assets.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5",
+    "png-to-ico": "^2.1.8"
+  }
+}

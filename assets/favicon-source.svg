@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Moss circle background -->
+  <circle cx="50" cy="50" r="50" fill="#4a7c59"/>
+
+  <!-- Three small tent silhouettes on the circle -->
+  <!-- Tent 1 (left, amber) -->
+  <g transform="translate(10, 55)">
+    <polygon points="0,0 18,-26 36,0" fill="#d98e3a"/>
+    <polygon points="5,0 18,-20 31,0" fill="#c07a28"/>
+    <rect x="13" y="-10" width="10" height="10" rx="1" fill="#355c42"/>
+  </g>
+
+  <!-- Tent 2 (centre, cream) -->
+  <g transform="translate(32, 50)">
+    <polygon points="0,0 18,-30 36,0" fill="#fbf9f3"/>
+    <polygon points="5,0 18,-24 31,0" fill="#e8e0d0"/>
+    <rect x="13" y="-12" width="10" height="12" rx="1" fill="#355c42"/>
+  </g>
+
+  <!-- Tent 3 (right, amber) -->
+  <g transform="translate(54, 57)">
+    <polygon points="0,0 16,-22 32,0" fill="#e8a04a"/>
+    <polygon points="5,0 16,-17 27,0" fill="#d98e3a"/>
+    <rect x="11" y="-9" width="10" height="9" rx="1" fill="#355c42"/>
+  </g>
+
+  <!-- Ground line -->
+  <rect x="5" y="75" width="90" height="3" rx="1" fill="#355c42" opacity="0.6"/>
+</svg>

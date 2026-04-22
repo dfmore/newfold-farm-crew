@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbf9f3"/>
+      <stop offset="60%" stop-color="#e8f0e9"/>
+      <stop offset="100%" stop-color="#c5d9c8"/>
+    </linearGradient>
+    <linearGradient id="hill1Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7aaa8a"/>
+      <stop offset="100%" stop-color="#5d8f6e"/>
+    </linearGradient>
+    <linearGradient id="hill2Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a7c59"/>
+      <stop offset="100%" stop-color="#355c42"/>
+    </linearGradient>
+    <linearGradient id="hill3Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#355c42"/>
+      <stop offset="100%" stop-color="#2a4a34"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="630" fill="url(#skyGrad)"/>
+
+  <!-- Cloud blobs -->
+  <ellipse cx="180" cy="120" rx="120" ry="45" fill="#fbf9f3" opacity="0.85"/>
+  <ellipse cx="240" cy="105" rx="90" ry="40" fill="#fbf9f3" opacity="0.85"/>
+  <ellipse cx="130" cy="115" rx="70" ry="35" fill="#fbf9f3" opacity="0.85"/>
+  <ellipse cx="950" cy="90" rx="140" ry="50" fill="#fbf9f3" opacity="0.80"/>
+  <ellipse cx="1020" cy="75" rx="100" ry="42" fill="#fbf9f3" opacity="0.80"/>
+  <ellipse cx="890" cy="100" rx="75" ry="36" fill="#fbf9f3" opacity="0.75"/>
+
+  <!-- Background hill (Kinder-like) -->
+  <path d="M0,340 Q100,270 200,290 Q320,250 430,275 Q560,240 680,260 Q800,230 900,255 Q1050,220 1200,245 L1200,630 L0,630 Z" fill="url(#hill1Grad)" opacity="0.5"/>
+
+  <!-- Mid hill (Mam Tor suggestion) -->
+  <path d="M0,380 Q80,340 200,355 Q350,315 500,335 Q620,305 720,330 Q850,295 1000,320 Q1100,305 1200,315 L1200,630 L0,630 Z" fill="url(#hill2Grad)" opacity="0.7"/>
+
+  <!-- Foreground hill -->
+  <path d="M0,450 Q150,415 280,430 Q400,405 520,425 Q640,400 760,418 Q900,395 1050,415 Q1130,408 1200,420 L1200,630 L0,630 Z" fill="url(#hill3Grad)"/>
+
+  <!-- Dry stone wall -->
+  <rect x="0" y="490" width="1200" height="8" rx="2" fill="#a09282"/>
+  <g fill="#c9c2b1" opacity="0.9">
+    <rect x="10" y="478" width="38" height="14" rx="2"/>
+    <rect x="52" y="480" width="32" height="12" rx="2"/>
+    <rect x="88" y="477" width="44" height="15" rx="2"/>
+    <rect x="136" y="479" width="36" height="13" rx="2"/>
+    <rect x="176" y="476" width="40" height="16" rx="2"/>
+    <rect x="220" y="480" width="33" height="12" rx="2"/>
+    <rect x="257" y="477" width="45" height="15" rx="2"/>
+    <rect x="306" y="479" width="37" height="13" rx="2"/>
+    <rect x="347" y="476" width="42" height="16" rx="2"/>
+    <rect x="393" y="480" width="34" height="12" rx="2"/>
+    <rect x="431" y="477" width="46" height="15" rx="2"/>
+    <rect x="481" y="479" width="38" height="13" rx="2"/>
+    <rect x="523" y="476" width="41" height="16" rx="2"/>
+    <rect x="568" y="480" width="33" height="12" rx="2"/>
+    <rect x="605" y="477" width="44" height="15" rx="2"/>
+    <rect x="653" y="479" width="36" height="13" rx="2"/>
+    <rect x="693" y="476" width="40" height="16" rx="2"/>
+    <rect x="737" y="480" width="35" height="12" rx="2"/>
+    <rect x="776" y="477" width="43" height="15" rx="2"/>
+    <rect x="823" y="479" width="37" height="13" rx="2"/>
+    <rect x="864" y="476" width="41" height="16" rx="2"/>
+    <rect x="909" y="480" width="34" height="12" rx="2"/>
+    <rect x="947" y="477" width="46" height="15" rx="2"/>
+    <rect x="997" y="479" width="38" height="13" rx="2"/>
+    <rect x="1039" y="476" width="42" height="16" rx="2"/>
+    <rect x="1085" y="480" width="33" height="12" rx="2"/>
+    <rect x="1122" y="477" width="44" height="15" rx="2"/>
+    <rect x="1170" y="479" width="30" height="13" rx="2"/>
+  </g>
+
+  <!-- Tent 1 (left, amber) -->
+  <g transform="translate(220, 480)">
+    <polygon points="0,0 60,-90 120,0" fill="#d98e3a"/>
+    <polygon points="15,0 60,-72 105,0" fill="#c07a28"/>
+    <rect x="45" y="-30" width="30" height="30" rx="3" fill="#355c42"/>
+    <path d="M50,-30 Q60,-45 70,-30" fill="none" stroke="#fbf9f3" stroke-width="2"/>
+    <line x1="0" y1="0" x2="-20" y2="15" stroke="#a09282" stroke-width="1.5" opacity="0.7"/>
+    <line x1="120" y1="0" x2="140" y2="15" stroke="#a09282" stroke-width="1.5" opacity="0.7"/>
+  </g>
+
+  <!-- Tent 2 (centre, moss) -->
+  <g transform="translate(520, 470)">
+    <polygon points="0,0 75,-110 150,0" fill="#4a7c59"/>
+    <polygon points="20,0 75,-88 130,0" fill="#355c42"/>
+    <rect x="55" y="-38" width="40" height="38" rx="3" fill="#2a4a34"/>
+    <path d="M61,-38 Q75,-56 89,-38" fill="none" stroke="#fbf9f3" stroke-width="2.5"/>
+    <line x1="0" y1="0" x2="-25" y2="18" stroke="#a09282" stroke-width="1.5" opacity="0.7"/>
+    <line x1="150" y1="0" x2="175" y2="18" stroke="#a09282" stroke-width="1.5" opacity="0.7"/>
+  </g>
+
+  <!-- Tent 3 (right, amber lighter) -->
+  <g transform="translate(840, 485)">
+    <polygon points="0,0 55,-80 110,0" fill="#e8a04a"/>
+    <polygon points="14,0 55,-64 96,0" fill="#d98e3a"/>
+    <rect x="40" y="-26" width="30" height="26" rx="3" fill="#355c42"/>
+    <path d="M45,-26 Q55,-40 65,-26" fill="none" stroke="#fbf9f3" stroke-width="2"/>
+    <line x1="0" y1="0" x2="-18" y2="14" stroke="#a09282" stroke-width="1.5" opacity="0.7"/>
+    <line x1="110" y1="0" x2="128" y2="14" stroke="#a09282" stroke-width="1.5" opacity="0.7"/>
+  </g>
+
+  <!-- Title text -->
+  <text x="600" y="195" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="bold" fill="#1f2a22" text-anchor="middle" letter-spacing="1">Newfold Farm Crew</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="248" font-family="'Helvetica Neue', Arial, sans-serif" font-size="30" fill="#4a7c59" text-anchor="middle" letter-spacing="2">1&#x2013;4 May 2026 &#xB7; Edale</text>
+
+  <!-- Decorative line -->
+  <line x1="400" y1="268" x2="800" y2="268" stroke="#d98e3a" stroke-width="2" opacity="0.6"/>
+</svg>
