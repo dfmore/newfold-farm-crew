@@ -212,17 +212,20 @@ function initPlan() {
   const cfg = TEXT_CONFIG.plan;
   const heading = el('plan-heading');
   const list = el('plan-list');
+  const prelude = el('plan-prelude');
+  const caveat = el('plan-caveat');
 
   if (heading) heading.textContent = cfg.heading;
+  if (prelude) prelude.textContent = cfg.prelude || '';
+  if (caveat) caveat.textContent = cfg.caveatFooter || '';
 
   if (list) {
     list.innerHTML = cfg.days.map(d => {
-      // Step 5: simplify to ONE short line per day
-      const firstItem = d.items[0] || '';
+      const detail = (d.items || []).map(esc).join(' ');
       return `
         <li class="plan-item">
           <div class="plan-day">${esc(d.label)}</div>
-          <span class="plan-detail">${esc(firstItem)}</span>
+          <span class="plan-detail">${detail}</span>
         </li>
       `;
     }).join('');
@@ -485,6 +488,8 @@ function initKidsCorner() {
   if (!cfg) return;
   const heading = el('kids-corner-heading');
   if (heading) heading.textContent = cfg.heading;
+  const disclaimer = el('kids-corner-disclaimer');
+  if (disclaimer) disclaimer.textContent = cfg.disclaimer;
   const nudge = el('mission-nudge');
   if (nudge) nudge.textContent = cfg.missionNudge;
 }

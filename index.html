@@ -47,14 +47,16 @@
   <!-- ========================================================
        TAB NAVIGATION
        ======================================================== -->
-  <nav class="tab-nav" role="tablist" aria-label="Site sections">
-    <button role="tab" id="tab-home" aria-controls="panel-home" aria-selected="true" class="tab-btn">🏕️ Home</button>
-    <button role="tab" id="tab-getting-there" aria-controls="panel-getting-there" aria-selected="false" class="tab-btn">🗺️ Getting There</button>
-    <button role="tab" id="tab-peaks" aria-controls="panel-peaks" aria-selected="false" class="tab-btn">⛰️ The Peaks</button>
-    <button role="tab" id="tab-kit" aria-controls="panel-kit" aria-selected="false" class="tab-btn">🎒 Kit List</button>
-    <button role="tab" id="tab-kids" aria-controls="panel-kids" aria-selected="false" class="tab-btn">🎮 Kids' Corner</button>
-    <button role="tab" id="tab-photos" aria-controls="panel-photos" aria-selected="false" class="tab-btn">📸 Photos</button>
-  </nav>
+  <div class="tab-nav-wrap">
+    <nav class="tab-nav" role="tablist" aria-label="Site sections">
+      <button role="tab" id="tab-home" aria-controls="panel-home" aria-selected="true" class="tab-btn">🏕️ Home</button>
+      <button role="tab" id="tab-getting-there" aria-controls="panel-getting-there" aria-selected="false" class="tab-btn">🗺️ Getting There</button>
+      <button role="tab" id="tab-peaks" aria-controls="panel-peaks" aria-selected="false" class="tab-btn">⛰️ The Peaks</button>
+      <button role="tab" id="tab-kit" aria-controls="panel-kit" aria-selected="false" class="tab-btn">🎒 Kit List</button>
+      <button role="tab" id="tab-kids" aria-controls="panel-kids" aria-selected="false" class="tab-btn">🎮 Kids' Corner</button>
+      <button role="tab" id="tab-photos" aria-controls="panel-photos" aria-selected="false" class="tab-btn">📸 Photos</button>
+    </nav>
+  </div>
 
   <!-- ========================================================
        PANEL: HOME (hero + mission + plan)
@@ -82,10 +84,11 @@
           <span class="emoji" aria-hidden="true">📅</span>
           <h2 id="plan-heading">Loading…</h2>
         </div>
+        <p class="disclaimer-note" id="plan-prelude" role="note"></p>
         <ul class="plan-list" id="plan-list" aria-label="Itinerary">
           <!-- populated by JS -->
         </ul>
-        <p class="plan-caveat">Plans may evolve — check the group chat.</p>
+        <p class="disclaimer-note" id="plan-caveat" role="note"></p>
       </div>
     </div>
 
@@ -186,6 +189,7 @@
           <span class="emoji" aria-hidden="true">🧒</span>
           <h2 id="kids-corner-heading"></h2>
         </div>
+        <p class="disclaimer-note" id="kids-corner-disclaimer" role="note">Loading…</p>
         <div class="kids-grid">
 
           <!-- Nature Bingo -->

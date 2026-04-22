@@ -63,37 +63,33 @@ const TEXT_CONFIG = {
   // === THE PLAN ===
   plan: {
     heading: 'The Plan',
+    prelude: 'Rough plan. Most of it will evolve — the group chat is the source of truth.',
+    caveatFooter: 'Anything’s likely to change — keep an eye on the group chat.',
     days: [
       {
         label: 'Friday evening',
         items: [
-          'Arrive ~5pm, pitch up.',
-          'Mass pasta cookout on Luke’s double gas hob — fresh pasta, toms, cheese, sweetcorn. Everyone piles in.',
+          'Arrive from ~5pm, pitch up.',
+          'Pasta night: Luke and Saul are pre-making the sauce and bringing it ready (fresh pasta + toms + cheese + sweetcorn, everyone piles in). Any dietary bits? Flag them in the group chat.',
         ],
       },
       {
         label: 'Saturday',
         items: [
-          'Free day. Walks, mooching, river. Do as much or as little as you like.',
-        ],
-      },
-      {
-        label: 'Saturday evening',
-        items: [
-          'Pizza night at the long table by the campsite pizza oven.',
-          'Adults: eat + drink. Kids: play (and leave the saplings alone).',
+          'See how the day goes — walks, mooching, river, whatever takes.',
+          'Pizza night in the evening at the long table by the pizza oven. Adults drink, kids play (no destroying saplings).',
         ],
       },
       {
         label: 'Sunday',
         items: [
-          'Big walk day — Mam Tor ridge if weather holds.',
+          'Another day in the Peaks — long walks if the weather plays ball, quiet one if not. Mam Tor is there if people fancy it.',
         ],
       },
       {
         label: 'Monday',
         items: [
-          'Lazy breakfast, pack up, leave clean.',
+          'Lazy breakfast, pack up, leave the pitch cleaner than we found it.',
         ],
       },
     ],
@@ -167,99 +163,16 @@ const TEXT_CONFIG = {
     ],
   },
 
-  // === CHECKLIST ===
+  // === CHECKLIST (Kit List panel heading + reset button copy; items live in kitCategories below) ===
   checklist: {
     heading: 'Gear & Food',
     resetLabel: 'Reset list',
-    groups: [
-      {
-        id: 'tents',
-        label: 'Tents & Camping',
-        items: [
-          { id: 'c-tent1', label: '3× tents' },
-          { id: 'c-airmat', label: '3× airmats' },
-          { id: 'c-sleepbag', label: '6× sleep bags' },
-          { id: 'c-pillows', label: '3× pillows' },
-          { id: 'c-duvets', label: '2× duvets' },
-          { id: 'c-lights', label: '3× lights' },
-          { id: 'c-tentbrush', label: 'Tent brush' },
-          { id: 'c-mallet', label: 'Mallet' },
-          { id: 'c-pans', label: 'Pans' },
-          { id: 'c-bowlscups', label: 'Bowls, cups & cutlery' },
-          { id: 'c-watercarrier', label: 'Water carrier' },
-          { id: 'c-tables', label: '2× tables' },
-          { id: 'c-chairs', label: '3× chairs' },
-          { id: 'c-washingliquid', label: 'Washing-up liquid' },
-          { id: 'c-washingbowl', label: 'Bowl for washing up' },
-          { id: 'c-lighter', label: 'Lighter' },
-          { id: 'c-towels', label: 'Towels ×2' },
-          { id: 'c-teatowel', label: 'Tea towel' },
-        ],
-      },
-      {
-        id: 'clothes',
-        label: 'Clothes',
-        items: [
-          { id: 'c-rain', label: 'Rain jackets ×3' },
-          { id: 'c-puffa', label: 'Puffa jackets ×3' },
-          { id: 'c-wellies', label: 'Wellies' },
-          { id: 'c-pantssocks', label: 'Pants & socks' },
-          { id: 'c-fleece', label: 'Fleece ×3' },
-          { id: 'c-tshirts', label: 'T-shirts' },
-          { id: 'c-shortsleggings', label: 'Shorts & leggings' },
-          { id: 'c-gloves', label: 'Gloves' },
-          { id: 'c-caps', label: 'Caps ×3' },
-          { id: 'c-woolyhats', label: 'Woolly hats ×3' },
-          { id: 'c-trunks', label: 'Trunks' },
-          { id: 'c-suncream', label: 'Sun cream' },
-          { id: 'c-sunnies', label: 'Sunglasses' },
-        ],
-      },
-      {
-        id: 'kids',
-        label: 'Kids',
-        items: [
-          { id: 'c-books', label: 'Books ×3' },
-          { id: 'c-teddies', label: 'Teddies ×2' },
-          { id: 'c-phonecharger', label: 'Phone & charger' },
-        ],
-      },
-      {
-        id: 'food',
-        label: 'Food & Kitchen',
-        items: [
-          { id: 'c-freshpasta', label: 'Fresh pasta' },
-          { id: 'c-tinnedtoms', label: 'Tinned tomatoes & corn' },
-          { id: 'c-mozz', label: 'Mozzarella' },
-          { id: 'c-beans', label: 'Beans' },
-          { id: 'c-breadmarg', label: 'Bread & marg' },
-          { id: 'c-bananas', label: 'Bananas' },
-          { id: 'c-apples', label: 'Apples' },
-          { id: 'c-granola', label: 'Granola' },
-          { id: 'c-teabags', label: 'Tea bags' },
-          { id: 'c-milk', label: 'Milk' },
-          { id: 'c-bacon', label: 'Bacon' },
-          { id: 'c-pringles', label: 'Pringles' },
-          { id: 'c-juicecartons', label: 'Juice cartons' },
-          { id: 'c-lager', label: 'Lager' },
-          { id: 'c-coke', label: 'Coke' },
-        ],
-      },
-      {
-        id: 'fun',
-        label: 'Fun',
-        items: [
-          { id: 'c-football', label: 'Football' },
-          { id: 'c-cricket', label: 'Cricket' },
-          { id: 'c-guitar', label: 'Guitar' },
-        ],
-      },
-    ],
   },
 
   // === KIDS' CORNER (parent heading + shared copy) ===
   kidsCorner: {
     heading: "Kids' Corner",
+    disclaimer: "📱 One phone, one game. Bingo cards and welly ratings live on this device only — they don’t sync between parents. Pass the phone around if you’re playing together.",
     missionNudge: 'See today’s mission at the top ↑',
   },
 
