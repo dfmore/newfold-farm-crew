@@ -68,7 +68,7 @@ const TEXT_CONFIG = {
         label: 'Friday evening',
         items: [
           'Arrive ~5pm, pitch up.',
-          'Mass pasta cookout on Luke’s double gas hob — fresh pasta, toms, cheese, sweetcorn. Chuck in style for the group.',
+          'Mass pasta cookout on Luke’s double gas hob — fresh pasta, toms, cheese, sweetcorn. Everyone piles in.',
         ],
       },
       {
@@ -102,31 +102,66 @@ const TEXT_CONFIG = {
   // === THE PEAKS ===
   peaks: {
     heading: 'Worth Doing Nearby',
-    flavour: {
-      fossil: '🪨 Peep at the dry stone walls — many stones hide 300-million-year-old crinoid fossils (little disc shapes). Free paleontology.',
-      trespass: '🚶 In 1932, walkers marched up Kinder Scout to claim the right to roam these moors. You’re enjoying the dividend.',
-    },
+    flavour: [
+      '📜 Edale = Old English “water valley”. The village is made of five historic **Booths** — 13th-century shepherd shelters that grew into hamlets.',
+      '🪨 Peep at the dry stone walls — many stones hide 300-million-year-old fossils from when the Peaks were a tropical sea. Free paleontology.',
+      '🚶 Kinder Mass Trespass, 1932 — walkers marched up the moors to claim the right to roam. You’re enjoying the dividend.',
+      '⛰️ England’s first organised mountain rescue team formed near here in 1928, after an accident on Laddow Rocks.',
+    ],
     groups: [
       {
         label: 'Walks',
         items: [
-          { name: 'Mam Tor ridge', desc: '2h, great views, kid-manageable', url: 'https://maps.google.com/?q=Mam+Tor+Castleton' },
-          { name: 'Kinder Scout low loop', desc: '2–3h from Edale village', url: 'https://maps.google.com/?q=Kinder+Scout+Edale' },
-          { name: "Jacob’s Ladder", desc: 'Classic Pennine Way start', url: 'https://maps.google.com/?q=Jacobs+Ladder+Edale' },
+          {
+            name: 'Edale Circular',
+            desc: 'Walkable from camp, valley-level, 1–1.5h. Packhorse bridge kids remember.',
+            url: 'https://www.nationaltrust.org.uk/visit/peak-district-derbyshire/kinder-edale-and-the-high-peak/edale-circular-walk',
+          },
+          {
+            name: 'Grindsbrook Clough',
+            desc: 'From camp or a 5-min drive. Proper stream walking — expect wet feet.',
+            url: 'https://peakdistrictwalks.net/best-walks-from-edale-peak-district/',
+          },
+          {
+            name: 'Mam Tor — “The Shivering Mountain”',
+            desc: 'Drive to footpath, easy-ish climb, huge views. The hill slips from shale underneath.',
+            url: 'https://visitpeakdistrict.com/business-directory/mam-tor-shivering-mountain',
+          },
         ],
       },
       {
         label: 'Pub',
         items: [
-          { name: "Old Nag’s Head", desc: 'The literal start of the Pennine Way, Edale village', url: 'https://maps.google.com/?q=Old+Nags+Head+Edale' },
+          {
+            name: 'The Rambler Inn',
+            desc: 'Walkable from camp. Beer garden, kids’ play area, home-cooked food.',
+            url: 'https://www.dorbiere.co.uk/the-rambler-inn/',
+          },
+          {
+            name: "Old Nag’s Head (trivia)",
+            desc: 'Opposite the Rambler. Official start of the Pennine Way — since 1577.',
+            url: 'https://maps.google.com/?q=Old+Nags+Head+Edale',
+          },
         ],
       },
       {
         label: 'Kid-friendly',
         items: [
-          { name: 'Chestnut Centre Wildlife Park', desc: 'Otters, owls', url: 'https://www.chestnutcentre.co.uk/' },
-          { name: 'Blue John Cavern', desc: 'Castleton', url: 'https://www.bluejohn-cavern.co.uk/' },
-          { name: 'Castleton village', desc: 'Ice cream, river paddle', url: 'https://maps.google.com/?q=Castleton+village+Derbyshire' },
+          {
+            name: 'Speedwell Cavern',
+            desc: 'Underground boat trip through a flooded lead mine. Age 5+, 106 wet steps. £16/£9, book ahead.',
+            url: 'https://peakdistrictkids.co.uk/speedwell-cavern/',
+          },
+          {
+            name: 'Castleton village',
+            desc: 'Free alternative. Ice cream, river paddle, mooching. Rainy-afternoon rescue.',
+            url: 'https://maps.google.com/?q=Castleton+village+Derbyshire',
+          },
+          {
+            name: 'Chestnut Centre Wildlife Park',
+            desc: 'Otters and owls. Wet-day backup.',
+            url: 'https://www.chestnutcentre.co.uk/',
+          },
         ],
       },
     ],
@@ -222,6 +257,12 @@ const TEXT_CONFIG = {
     ],
   },
 
+  // === KIDS' CORNER (parent heading + shared copy) ===
+  kidsCorner: {
+    heading: "Kids' Corner",
+    missionNudge: 'See today’s mission at the top ↑',
+  },
+
   // === NATURE BINGO ===
   bingo: {
     heading: 'Nature Bingo',
@@ -271,9 +312,7 @@ const TEXT_CONFIG = {
     subhead: 'No sign-up needed. Just pop your name and upload.',
     body: 'Best bits, worst bits, muddiest bits. Photos and videos both welcome.',
     buttonLabel: '📸 Chuck yer photos in here',
-    // Paste your Dropbox File Request URL below when ready.
-    dropboxUrl: '',
-    pendingNote: 'Upload link coming soon — keep an eye on the group chat.',
+    dropboxUrl: 'https://www.dropbox.com/request/8zhrdnjwh5h0sc3iz0ws',
   },
 
   // === SHARE / QR ===

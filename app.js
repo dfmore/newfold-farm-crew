@@ -191,11 +191,10 @@ function initPeaks() {
     `).join('');
   }
 
-  if (flavour && cfg.flavour) {
-    flavour.innerHTML = `
-      <div class="flavour-box">${cfg.flavour.fossil}</div>
-      <div class="flavour-box">${cfg.flavour.trespass}</div>
-    `;
+  if (flavour && Array.isArray(cfg.flavour)) {
+    flavour.innerHTML = cfg.flavour
+      .map(line => `<div class="flavour-box">${esc(line).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')}</div>`)
+      .join('');
   }
 }
 
@@ -346,6 +345,15 @@ function bingoToggle(idx) {
   }
   bingoSave();
   renderBingo();
+}
+
+function initKidsCorner() {
+  const cfg = TEXT_CONFIG.kidsCorner;
+  if (!cfg) return;
+  const heading = el('kids-corner-heading');
+  if (heading) heading.textContent = cfg.heading;
+  const nudge = el('mission-nudge');
+  if (nudge) nudge.textContent = cfg.missionNudge;
 }
 
 function initBingo() {
@@ -678,6 +686,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initPlan();
   initPeaks();
   initChecklist();
+  initKidsCorner();
   initBingo();
   initSquelch();
   initMemoryWall();
