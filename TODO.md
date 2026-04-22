@@ -2,6 +2,25 @@
 
 User inputs needed for the build. `/make` will wire these in as they land.
 
+## 🎯 Critical references for /make
+
+- **GitHub remote (already created, empty):**
+  ```
+  git remote add origin https://github.com/dfmore/newfold-farm-crew.git
+  ```
+  Push target is `main` branch, root. Pages is NOT yet enabled — will be
+  enabled by the advisory session after the first push lands.
+
+- **Dropbox upload URL** (for Memory Wall button):
+  ```
+  https://www.dropbox.com/request/8zhrdnjwh5h0sc3iz0ws
+  ```
+
+- **"The Peaks" content** — curated scout research available at
+  `.claude/specs/the-peaks-research.md`. The main spec section 6 has been
+  updated with the canonical list (Edale Circular / Grindsbrook /
+  Mam Tor + Rambler Inn + Speedwell + Castleton + flavour snippets).
+
 ## Blocking
 
 _(all blockers resolved)_

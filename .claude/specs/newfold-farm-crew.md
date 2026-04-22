@@ -162,28 +162,58 @@ Rough itinerary from the group chat (confirmed Apr 22):
 
 ### 6. The Peaks — nearby worth doing
 
-Curated cards, each with name, 1-line description, and link. **Starter set**
-(user can edit):
+Curated cards, each with name, 1-line description, and link. **Content
+sourced from scout research** — see
+`.claude/specs/the-peaks-research.md` for full details, gotchas, and source
+links. Use the names and one-liners below verbatim unless told otherwise.
 
-**Walks**
-- Mam Tor ridge — 2h, great views, kid-manageable
-- Kinder Scout low loop — 2–3h from Edale village
-- Jacob's Ladder — classic Pennine Way start
+**Walks** (ordered by accessibility):
 
-**Pub**
-- Old Nag's Head — the literal start of the Pennine Way, Edale village
+1. **Edale Circular** — walkable from camp, valley-level, 1–1.5 hours,
+   packhorse bridge that kids will remember.
+   _Link:_ https://www.nationaltrust.org.uk/visit/peak-district-derbyshire/kinder-edale-and-the-high-peak/edale-circular-walk
 
-**Kid-friendly**
-- Chestnut Centre Wildlife Park — otters, owls
-- Blue John Cavern — Castleton
-- Castleton village — ice cream, river paddle
+2. **Grindsbrook Clough** — walk from camp or 5-min drive, stream-based,
+   moderate. Expect wet feet.
+   _Link:_ https://peakdistrictwalks.net/best-walks-from-edale-peak-district/
 
-**Small flavour snippets** (not their own sections, just one-liners
-interspersed):
-- **Fossil tip**: "Peep at the dry stone walls — many stones hide 300-million-
-  year-old crinoid fossils (little disc shapes). Free paleontology."
-- **Trespass note**: "In 1932, walkers marched up Kinder Scout to claim the
-  right to roam these moors. You're enjoying the dividend."
+3. **Mam Tor — "The Shivering Mountain"** — drive to footpath, easy-ish
+   climb, massive views. The hill literally slips from the shale underneath.
+   _Link:_ https://visitpeakdistrict.com/business-directory/mam-tor-shivering-mountain
+
+**Pub**:
+
+- **The Rambler Inn (Edale)** — walkable from camp. Large beer garden,
+  **kids' play area on-site**, home-cooked food. The practical choice.
+  _Link:_ https://www.dorbiere.co.uk/the-rambler-inn/
+- Trivia mention (one-liner): _The Old Nag's Head opposite is the official
+  start of the Pennine Way — walkers have been setting off from that
+  doorstep since 1577._
+
+**Kid-specific outdoor spots**:
+
+- **Speedwell Cavern (Castleton)** — 10–15 min drive. Underground boat trip
+  through a 200-year-old flooded lead mine. Age 5+ (106 wet steps down).
+  Paid: £16 adults / £9 kids. Timed slots — book ahead or arrive early.
+  _Link:_ https://peakdistrictkids.co.uk/speedwell-cavern/
+- **Castleton village** — free alternative. Ice cream + river paddle +
+  mooching. Good rainy-afternoon rescue.
+- **Chestnut Centre Wildlife Park** — otters and owls. Wet-day backup.
+
+**Small flavour snippets** (one-liners interspersed throughout "The Peaks"
+cards, not their own section):
+
+- **Place-name**: _Edale = Old English "water valley". Settled since
+  Anglo-Saxon times. The village is made of five historic **Booths** —
+  13th-century shepherd shelters that grew into hamlets._
+- **Fossil tip**: _Peep at the dry stone walls — many stones hide
+  300-million-year-old fossils from when the Peak District was a tropical
+  sea. Free paleontology._
+- **Trespass note**: _Kinder Mass Trespass, 1932 — walkers marched up the
+  moors to claim the right to roam. You're enjoying the dividend._
+- **Mountain-rescue trivia** (optional, for older kids): _England's first
+  organised mountain rescue team formed near here in 1928, after an
+  accident on Laddow Rocks._
 
 ### 7. Gear & Food checklist
 
