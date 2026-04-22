@@ -284,10 +284,11 @@ the Kids' Corner, add a small note "See today's mission at the top ↑".
 
 ### 11. Footer
 
-- WhatsApp group invite link (user will supply; placeholder in `text-config.js`)
-- Campsite phone / website link
+- Campsite website link
 - Small wink: _"Built for t' group chat."_ (Yorkshire-adjacent, low-key)
 - NO "Howay" anywhere.
+- No WhatsApp invite link — everyone who'll see the site is already in the
+  group chat.
 
 ### 12. Link preview (Open Graph) + Favicons
 
@@ -445,8 +446,7 @@ These are inputs the build needs but only the user can provide. Capture them
 in TODO.md at the project root so /make can pick them up as they land.
 
 1. **Dropbox File Request URL** — for Memory Wall button (only hard blocker)
-2. **WhatsApp group invite link** — for footer (optional; only needed if the
-   site might be shared outside the existing group)
+2. ~~WhatsApp invite link~~ — cut. Not needed.
 3. ~~Hero image~~ — not needed. Illustrated SVG drives the hero.
 4. ~~Kids' names~~ — managed inline in the site UI. No config input required.
 5. **Confirm / tweak itinerary** — rough day-by-day plan (after first preview)
