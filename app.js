@@ -1,7 +1,10 @@
 /**
- * app.js — Newfold Farm Crew
+ * app.js — Newfold Farm Crew v2
  * All DOM binding + interactive features.
  * Reads from TEXT_CONFIG (text-config.js) exclusively.
+ *
+ * Locked behaviours (bingo, squelch, checklist, mission) copied verbatim from v1.
+ * New in v2: initTabs(), initKitList(), fixed initQR().
  */
 
 'use strict';
@@ -47,12 +50,73 @@ function todayKey() {
 }
 
 /* ============================================================
+   ESCAPE HELPER (prevent XSS in innerHTML)
+   ============================================================ */
+function esc(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
+
+/* ============================================================
+   TAB NAVIGATION (new in v2)
+   localStorage key: newfold:activeTab
+   ============================================================ */
+const ACTIVE_TAB_KEY = 'newfold:activeTab';
+const KNOWN_SLUGS = ['home', 'getting-there', 'peaks', 'kit', 'kids', 'photos'];
+
+function initTabs() {
+  // Determine active tab: hash > localStorage > default 'home'
+  let active = 'home';
+  const hash = (window.location.hash || '').replace('#', '');
+  if (KNOWN_SLUGS.includes(hash)) {
+    active = hash;
+  } else {
+    const saved = ls(ACTIVE_TAB_KEY);
+    if (saved && KNOWN_SLUGS.includes(saved)) active = saved;
+  }
+
+  function switchTab(slug) {
+    KNOWN_SLUGS.forEach(s => {
+      const btn = el('tab-' + s);
+      const panel = el('panel-' + s);
+      const isActive = s === slug;
+      if (btn) btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      if (panel) {
+        if (isActive) {
+          panel.removeAttribute('hidden');
+        } else {
+          panel.setAttribute('hidden', '');
+        }
+      }
+    });
+    lsSet(ACTIVE_TAB_KEY, slug);
+    history.replaceState(null, '', '#' + slug);
+  }
+
+  // Bind click handlers
+  KNOWN_SLUGS.forEach(slug => {
+    const btn = el('tab-' + slug);
+    if (btn) {
+      btn.addEventListener('click', () => switchTab(slug));
+    }
+  });
+
+  // Apply initial state
+  switchTab(active);
+}
+
+/* ============================================================
    1. HERO
    ============================================================ */
 function initHero() {
   const cfg = TEXT_CONFIG.hero;
-  const h = el('hero-headline');
-  const s = el('hero-subhead');
+  const h = el('hero-title');
+  const s = el('hero-subtitle');
   if (h) h.textContent = cfg.headline;
   if (s) s.textContent = cfg.subhead;
 }
@@ -153,11 +217,12 @@ function initPlan() {
 
   if (list) {
     list.innerHTML = cfg.days.map(d => {
-      const details = d.items.map(i => `<span class="plan-detail">${esc(i)}</span>`).join('<br>');
+      // Step 5: simplify to ONE short line per day
+      const firstItem = d.items[0] || '';
       return `
         <li class="plan-item">
           <div class="plan-day">${esc(d.label)}</div>
-          ${details}
+          <span class="plan-detail">${esc(firstItem)}</span>
         </li>
       `;
     }).join('');
@@ -182,6 +247,7 @@ function initPeaks() {
         <div class="peaks-cards">
           ${g.items.map(item => `
             <a href="${esc(item.url)}" target="_blank" rel="noopener" class="peak-card">
+              ${item.image ? `<img loading="lazy" src="${esc(item.image)}" alt="">` : ''}
               <strong>${esc(item.name)}</strong>
               <span>${esc(item.desc)}</span>
             </a>
@@ -199,75 +265,142 @@ function initPeaks() {
 }
 
 /* ============================================================
-   7. CHECKLIST
+   7. KIT LIST — drillable UX (new in v2)
+   localStorage key: newfold:kit:activeCategory
+   Tick state: newfold:checklist:<itemId>  (same as v1)
    ============================================================ */
 const CHECKLIST_PREFIX = 'newfold:checklist:';
+const KIT_CATEGORY_KEY = 'newfold:kit:activeCategory';
 
-function initChecklist() {
+function kitTickCount(cat) {
+  let ticked = 0;
+  cat.items.forEach(item => {
+    if (ls(CHECKLIST_PREFIX + item.id) === '1') ticked++;
+  });
+  return ticked;
+}
+
+function renderKitGrid() {
+  const cats = TEXT_CONFIG.kitCategories;
+  const root = el('kit-root');
+  if (!root || !cats) return;
+
+  root.innerHTML = `
+    <div class="kit-category-grid">
+      ${cats.map(cat => {
+        const total = cat.items.length;
+        const ticked = kitTickCount(cat);
+        const hasTicked = ticked > 0;
+        const badgeText = hasTicked
+          ? `${ticked} / ${total} packed`
+          : `${total} items`;
+        return `
+          <button class="kit-category-card" data-cat-id="${esc(cat.id)}" aria-label="${esc(cat.title)}: ${esc(badgeText)}">
+            <span class="kit-cat-emoji" aria-hidden="true">${cat.emoji}</span>
+            <span class="kit-cat-title">${esc(cat.title)}</span>
+            <span class="kit-cat-badge${hasTicked ? ' has-ticked' : ''}">${esc(badgeText)}</span>
+          </button>
+        `;
+      }).join('')}
+    </div>
+  `;
+
+  root.querySelectorAll('.kit-category-card').forEach(btn => {
+    btn.addEventListener('click', () => {
+      lsSet(KIT_CATEGORY_KEY, btn.dataset.catId);
+      renderKitCategory(btn.dataset.catId);
+    });
+  });
+}
+
+function renderKitCategory(catId) {
+  const cats = TEXT_CONFIG.kitCategories;
+  const cat = cats && cats.find(c => c.id === catId);
+  const root = el('kit-root');
+  if (!root || !cat) return;
+
+  root.innerHTML = `
+    <button class="kit-back-btn" id="kit-back">← All categories</button>
+    <div class="kit-category-heading">${cat.emoji} ${esc(cat.title)}</div>
+    <ul class="checklist-items" role="list">
+      ${cat.items.map(item => {
+        const checked = ls(CHECKLIST_PREFIX + item.id) === '1';
+        return `
+          <li class="checklist-item${checked ? ' checked' : ''}" data-id="${esc(item.id)}">
+            <input type="checkbox" id="${esc(item.id)}" ${checked ? 'checked' : ''}
+                   aria-label="${esc(item.label)}">
+            <label for="${esc(item.id)}">${esc(item.label)}</label>
+          </li>
+        `;
+      }).join('')}
+    </ul>
+  `;
+
+  // Back button
+  const backBtn = el('kit-back');
+  if (backBtn) {
+    backBtn.addEventListener('click', () => {
+      lsRemove(KIT_CATEGORY_KEY);
+      renderKitGrid();
+    });
+  }
+
+  // Tick handlers with live badge updates
+  root.querySelectorAll('.checklist-item').forEach(li => {
+    const cb = li.querySelector('input[type="checkbox"]');
+    if (!cb) return;
+    cb.addEventListener('change', () => {
+      const id = li.dataset.id;
+      if (cb.checked) {
+        lsSet(CHECKLIST_PREFIX + id, '1');
+        li.classList.add('checked');
+      } else {
+        lsRemove(CHECKLIST_PREFIX + id);
+        li.classList.remove('checked');
+      }
+    });
+  });
+}
+
+function initKitList() {
   const cfg = TEXT_CONFIG.checklist;
   const heading = el('checklist-heading');
   const resetBtn = el('checklist-reset');
-  const groupsEl = el('checklist-groups');
 
   if (heading) heading.textContent = cfg.heading;
   if (resetBtn) {
     resetBtn.textContent = cfg.resetLabel;
-    resetBtn.addEventListener('click', resetChecklist);
+    resetBtn.addEventListener('click', () => {
+      // Clear ALL checklist keys (v1 keys + v2 kit keys)
+      const keysToRemove = [];
+      try {
+        for (let i = 0; i < localStorage.length; i++) {
+          const k = localStorage.key(i);
+          if (k && k.startsWith(CHECKLIST_PREFIX)) keysToRemove.push(k);
+        }
+      } catch (e) { /* ignore */ }
+      keysToRemove.forEach(k => lsRemove(k));
+      // Re-render current view
+      const activeCat = ls(KIT_CATEGORY_KEY);
+      if (activeCat) {
+        renderKitCategory(activeCat);
+      } else {
+        renderKitGrid();
+      }
+    });
   }
 
-  if (!groupsEl) return;
-
-  groupsEl.innerHTML = cfg.groups.map(group => `
-    <div class="checklist-group">
-      <h3>${esc(group.label)}</h3>
-      <ul class="checklist-items" role="list">
-        ${group.items.map(item => {
-          const checked = ls(CHECKLIST_PREFIX + item.id) === '1';
-          return `
-            <li class="checklist-item${checked ? ' checked' : ''}" data-id="${esc(item.id)}">
-              <input type="checkbox" id="${esc(item.id)}" ${checked ? 'checked' : ''}
-                     aria-label="${esc(item.label)}">
-              <label for="${esc(item.id)}">${esc(item.label)}</label>
-            </li>
-          `;
-        }).join('')}
-      </ul>
-    </div>
-  `).join('');
-
-  // Event delegation on the container
-  groupsEl.addEventListener('change', function(e) {
-    if (e.target.type !== 'checkbox') return;
-    const li = e.target.closest('.checklist-item');
-    if (!li) return;
-    const id = li.dataset.id;
-    if (e.target.checked) {
-      lsSet(CHECKLIST_PREFIX + id, '1');
-      li.classList.add('checked');
-    } else {
-      lsRemove(CHECKLIST_PREFIX + id);
-      li.classList.remove('checked');
-    }
-  });
-}
-
-function resetChecklist() {
-  const cfg = TEXT_CONFIG.checklist;
-  cfg.groups.forEach(group => {
-    group.items.forEach(item => lsRemove(CHECKLIST_PREFIX + item.id));
-  });
-  // Re-render
-  const groupsEl = el('checklist-groups');
-  if (!groupsEl) return;
-  groupsEl.querySelectorAll('.checklist-item').forEach(li => {
-    li.classList.remove('checked');
-    const cb = li.querySelector('input[type="checkbox"]');
-    if (cb) cb.checked = false;
-  });
+  // Restore last open category or show grid
+  const activeCat = ls(KIT_CATEGORY_KEY);
+  if (activeCat && TEXT_CONFIG.kitCategories && TEXT_CONFIG.kitCategories.find(c => c.id === activeCat)) {
+    renderKitCategory(activeCat);
+  } else {
+    renderKitGrid();
+  }
 }
 
 /* ============================================================
-   8a. NATURE BINGO
+   8a. NATURE BINGO — VERBATIM FROM v1
    ============================================================ */
 const BINGO_CARD_KEY = 'newfold:bingo:card';    // JSON array of item ids (current 9)
 const BINGO_MARKS_KEY = 'newfold:bingo:marks';  // JSON array of marked item ids
@@ -386,7 +519,7 @@ function initBingo() {
 }
 
 /* ============================================================
-   8b. SQUELCH-O-METER
+   8b. SQUELCH-O-METER — VERBATIM FROM v1
    ============================================================ */
 const KIDS_LIST_KEY = 'newfold:kids:list';
 const SQUELCH_PREFIX = 'newfold:squelch:';
@@ -566,7 +699,7 @@ function initSquelch() {
 }
 
 /* ============================================================
-   9. MEMORY WALL
+   9. MEMORY WALL — VERBATIM FROM v1
    ============================================================ */
 function initMemoryWall() {
   const cfg = TEXT_CONFIG.memoryWall;
@@ -602,45 +735,26 @@ function initMemoryWall() {
 }
 
 /* ============================================================
-   10. QR CODE
+   10. QR CODE — FIXED in v2 (use new QRCode(el, opts) API)
    ============================================================ */
 function initQR() {
+  const canvas = document.getElementById('qr-canvas');
   const cfg = TEXT_CONFIG.share;
-  const heading = el('share-heading');
-  const body = el('share-body');
-  const canvas = el('qr-canvas');
-
+  const heading = document.getElementById('share-heading');
+  const body = document.getElementById('share-body');
   if (heading) heading.textContent = cfg.heading;
   if (body) body.textContent = cfg.body;
-
-  if (!canvas) return;
-
-  const siteUrl = window.location.origin + window.location.pathname;
-
-  // QRCode.js (vendored) — uses QRCode global
-  if (typeof QRCode !== 'undefined') {
-    try {
-      QRCode.toCanvas(canvas, siteUrl, {
-        width: 200,
-        margin: 2,
-        color: { dark: '#1f2a22', light: '#ffffff' },
-      });
-    } catch (e) {
-      console.warn('QR render failed:', e);
-    }
-  } else {
-    // Fallback: show text URL
-    canvas.style.display = 'none';
-    const p = document.createElement('p');
-    p.style.wordBreak = 'break-all';
-    p.style.fontSize = '0.8rem';
-    p.textContent = siteUrl;
-    canvas.parentNode.insertBefore(p, canvas.nextSibling);
-  }
+  if (!canvas || typeof QRCode === 'undefined') return;
+  new QRCode(canvas, {
+    text: window.location.origin + window.location.pathname,
+    width: 200, height: 200,
+    colorDark: '#1f2a22', colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.M,
+  });
 }
 
 /* ============================================================
-   11. FOOTER
+   11. FOOTER — VERBATIM FROM v1
    ============================================================ */
 function initFooter() {
   const cfg = TEXT_CONFIG.footer;
@@ -658,19 +772,6 @@ function initFooter() {
 }
 
 /* ============================================================
-   ESCAPE HELPER (prevent XSS in innerHTML)
-   ============================================================ */
-function esc(str) {
-  if (str == null) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#x27;');
-}
-
-/* ============================================================
    BOOT
    ============================================================ */
 document.addEventListener('DOMContentLoaded', function () {
@@ -679,13 +780,16 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
+  // Tab wiring FIRST — establishes panel visibility before other inits run
+  initTabs();
+
   initHero();
   initMission();
   initGettingThere();
   initWeather();
   initPlan();
   initPeaks();
-  initChecklist();
+  initKitList();
   initKidsCorner();
   initBingo();
   initSquelch();

@@ -45,197 +45,222 @@
 <body>
 
   <!-- ========================================================
-       1. HERO
+       TAB NAVIGATION
        ======================================================== -->
-  <header id="hero" class="hero" role="banner">
-    <!-- SVG illustration layered over gradient (inline for responsiveness) -->
-    <img
-      src="assets/og-source.svg"
-      alt="Three camping tents on mossy Peak District hills with dry stone walls"
-      class="hero-illustration"
-      aria-hidden="true"
-    >
-    <div class="hero-content">
-      <h1 id="hero-headline">Loading…</h1>
-      <p class="hero-subhead" id="hero-subhead">Loading…</p>
-    </div>
-  </header>
+  <nav class="tab-nav" role="tablist" aria-label="Site sections">
+    <button role="tab" id="tab-home" aria-controls="panel-home" aria-selected="true" class="tab-btn">🏕️ Home</button>
+    <button role="tab" id="tab-getting-there" aria-controls="panel-getting-there" aria-selected="false" class="tab-btn">🗺️ Getting There</button>
+    <button role="tab" id="tab-peaks" aria-controls="panel-peaks" aria-selected="false" class="tab-btn">⛰️ The Peaks</button>
+    <button role="tab" id="tab-kit" aria-controls="panel-kit" aria-selected="false" class="tab-btn">🎒 Kit List</button>
+    <button role="tab" id="tab-kids" aria-controls="panel-kids" aria-selected="false" class="tab-btn">🎮 Kids' Corner</button>
+    <button role="tab" id="tab-photos" aria-controls="panel-photos" aria-selected="false" class="tab-btn">📸 Photos</button>
+  </nav>
 
   <!-- ========================================================
-       2. TODAY'S MISSION
+       PANEL: HOME (hero + mission + plan)
        ======================================================== -->
-  <section id="mission" aria-labelledby="mission-heading">
-    <h2 id="mission-heading">Loading…</h2>
-    <p class="mission-text" id="mission-text">Loading…</p>
-  </section>
+  <section role="tabpanel" id="panel-home" aria-labelledby="tab-home">
 
-  <!-- ========================================================
-       3. GETTING THERE
-       ======================================================== -->
-  <section id="getting-there" aria-labelledby="getting-there-heading">
-    <div class="container">
-      <div class="section-heading">
-        <span class="emoji" aria-hidden="true">🗺️</span>
-        <h2 id="getting-there-heading">Loading…</h2>
+    <!-- Hero -->
+    <header id="hero" class="hero" role="banner">
+      <div class="hero-content">
+        <h1 id="hero-title">Loading…</h1>
+        <p id="hero-subtitle">Loading…</p>
       </div>
-      <div class="card">
-        <div class="info-grid" id="getting-there-grid">
-          <!-- populated by JS -->
+    </header>
+
+    <!-- Today's Mission -->
+    <div id="mission" aria-labelledby="mission-heading">
+      <h2 id="mission-heading">Loading…</h2>
+      <p class="mission-text" id="mission-text">Loading…</p>
+    </div>
+
+    <!-- The Plan -->
+    <div id="plan" class="panel-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="emoji" aria-hidden="true">📅</span>
+          <h2 id="plan-heading">Loading…</h2>
         </div>
-        <div class="links-row" id="getting-there-links">
+        <ul class="plan-list" id="plan-list" aria-label="Itinerary">
           <!-- populated by JS -->
+        </ul>
+        <p class="plan-caveat">Plans may evolve — check the group chat.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========================================================
+       PANEL: GETTING THERE
+       ======================================================== -->
+  <section role="tabpanel" id="panel-getting-there" aria-labelledby="tab-getting-there" hidden>
+    <div class="panel-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="emoji" aria-hidden="true">🗺️</span>
+          <h2 id="getting-there-heading">Loading…</h2>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       4. WEATHER
-       ======================================================== -->
-  <section id="weather" aria-labelledby="weather-heading">
-    <div class="container">
-      <div class="section-heading">
-        <span class="emoji" aria-hidden="true">🌤️</span>
-        <h2 id="weather-heading">Loading…</h2>
-      </div>
-      <p class="section-intro" id="weather-intro">Loading…</p>
-      <div class="weather-links" id="weather-links">
-        <!-- populated by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       5. THE PLAN
-       ======================================================== -->
-  <section id="plan" aria-labelledby="plan-heading">
-    <div class="container">
-      <div class="section-heading">
-        <span class="emoji" aria-hidden="true">📅</span>
-        <h2 id="plan-heading">Loading…</h2>
-      </div>
-      <ul class="plan-list" id="plan-list" aria-label="Itinerary">
-        <!-- populated by JS -->
-      </ul>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       6. THE PEAKS
-       ======================================================== -->
-  <section id="peaks" aria-labelledby="peaks-heading">
-    <div class="container">
-      <div class="section-heading">
-        <span class="emoji" aria-hidden="true">🏔️</span>
-        <h2 id="peaks-heading">Loading…</h2>
-      </div>
-      <div class="peaks-groups" id="peaks-groups">
-        <!-- populated by JS -->
-      </div>
-      <div id="peaks-flavour">
-        <!-- populated by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       7. CHECKLIST
-       ======================================================== -->
-  <section id="checklist" aria-labelledby="checklist-heading">
-    <div class="container">
-      <div class="section-heading">
-        <span class="emoji" aria-hidden="true">🎒</span>
-        <h2 id="checklist-heading">Loading…</h2>
-      </div>
-      <div class="checklist-toolbar">
-        <button class="btn btn--outline btn--sm" id="checklist-reset">Loading…</button>
-      </div>
-      <div class="checklist-groups" id="checklist-groups">
-        <!-- populated by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       8. KIDS' CORNER
-       ======================================================== -->
-  <section id="kids-corner" aria-labelledby="kids-corner-heading">
-    <div class="container--wide">
-      <div class="section-heading">
-        <span class="emoji" aria-hidden="true">🧒</span>
-        <h2 id="kids-corner-heading"></h2>
-      </div>
-      <div class="kids-grid">
-
-        <!-- 8a: Nature Bingo -->
-        <div class="bingo-card" role="region" aria-labelledby="bingo-heading">
-          <h3 id="bingo-heading">Loading…</h3>
-          <div class="bingo-banner" id="bingo-banner" role="status" aria-live="polite">Loading…</div>
-          <div class="bingo-grid" id="bingo-grid" role="grid" aria-label="Nature Bingo">
+        <div class="card">
+          <div class="info-grid" id="getting-there-grid">
             <!-- populated by JS -->
           </div>
-          <div class="bingo-actions">
-            <button class="btn btn--sm btn--outline" id="bingo-reshuffle">Loading…</button>
-          </div>
-        </div>
-
-        <!-- 8b: Squelch-o-Meter -->
-        <div class="squelch-card" role="region" aria-labelledby="squelch-heading">
-          <h3 id="squelch-heading">Loading…</h3>
-          <p class="squelch-subhead" id="squelch-subhead">Loading…</p>
-          <div class="squelch-reveal" id="squelch-reveal" role="status" aria-live="polite">
-            <strong id="squelch-reveal-text"></strong>
-            <span id="squelch-reveal-score"></span>
-          </div>
-          <p class="squelch-empty" id="squelch-empty" aria-live="polite">Loading…</p>
-          <div class="squelch-kids" id="squelch-kids">
+          <div class="links-row" id="getting-there-links">
             <!-- populated by JS -->
           </div>
-          <div class="squelch-add-row">
-            <input type="text" id="squelch-name-input" maxlength="30" autocomplete="off">
-            <button class="btn btn--sm" id="squelch-add-btn">Loading…</button>
+        </div>
+
+        <!-- Google Maps embed -->
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps?q=Newfold+Farm+Edale+S33+7ZD&output=embed"
+            width="100%" height="280" style="border:0; border-radius:12px;"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Map of Newfold Farm, Edale"
+            title="Map of Newfold Farm, Edale"></iframe>
+        </div>
+
+        <!-- Weather links in Getting There panel -->
+        <div class="weather-block">
+          <div class="section-heading">
+            <span class="emoji" aria-hidden="true">🌤️</span>
+            <h2 id="weather-heading">Loading…</h2>
+          </div>
+          <p class="section-intro" id="weather-intro">Loading…</p>
+          <div class="weather-links" id="weather-links">
+            <!-- populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       PANEL: THE PEAKS
+       ======================================================== -->
+  <section role="tabpanel" id="panel-peaks" aria-labelledby="tab-peaks" hidden>
+    <div class="panel-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="emoji" aria-hidden="true">🏔️</span>
+          <h2 id="peaks-heading">Loading…</h2>
+        </div>
+        <div class="peaks-groups" id="peaks-groups">
+          <!-- populated by JS -->
+        </div>
+        <div id="peaks-flavour">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       PANEL: KIT LIST
+       ======================================================== -->
+  <section role="tabpanel" id="panel-kit" aria-labelledby="tab-kit" hidden>
+    <div class="panel-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="emoji" aria-hidden="true">🎒</span>
+          <h2 id="checklist-heading">Loading…</h2>
+        </div>
+        <div class="checklist-toolbar">
+          <button class="btn btn--outline btn--sm" id="checklist-reset">Loading…</button>
+        </div>
+        <!-- Kit drill-down root: either category grid or item list -->
+        <div id="kit-root">
+          <!-- populated by initKitList() -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       PANEL: KIDS' CORNER
+       ======================================================== -->
+  <section role="tabpanel" id="panel-kids" aria-labelledby="tab-kids" hidden>
+    <div class="panel-section">
+      <div class="container--wide">
+        <div class="section-heading">
+          <span class="emoji" aria-hidden="true">🧒</span>
+          <h2 id="kids-corner-heading"></h2>
+        </div>
+        <div class="kids-grid">
+
+          <!-- Nature Bingo -->
+          <div class="bingo-card" role="region" aria-labelledby="bingo-heading">
+            <h3 id="bingo-heading">Loading…</h3>
+            <div class="bingo-banner" id="bingo-banner" role="status" aria-live="polite">Loading…</div>
+            <div class="bingo-grid" id="bingo-grid" role="grid" aria-label="Nature Bingo">
+              <!-- populated by JS -->
+            </div>
+            <div class="bingo-actions">
+              <button class="btn btn--sm btn--outline" id="bingo-reshuffle">Loading…</button>
+            </div>
+          </div>
+
+          <!-- Squelch-o-Meter -->
+          <div class="squelch-card" role="region" aria-labelledby="squelch-heading">
+            <h3 id="squelch-heading">Loading…</h3>
+            <p class="squelch-subhead" id="squelch-subhead">Loading…</p>
+            <div class="squelch-reveal" id="squelch-reveal" role="status" aria-live="polite">
+              <strong id="squelch-reveal-text"></strong>
+              <span id="squelch-reveal-score"></span>
+            </div>
+            <p class="squelch-empty" id="squelch-empty" aria-live="polite">Loading…</p>
+            <div class="squelch-kids" id="squelch-kids">
+              <!-- populated by JS -->
+            </div>
+            <div class="squelch-add-row">
+              <input type="text" id="squelch-name-input" maxlength="30" autocomplete="off">
+              <button class="btn btn--sm" id="squelch-add-btn">Loading…</button>
+            </div>
+          </div>
+
+        </div>
+        <!-- Mission nudge -->
+        <p class="mission-nudge" id="mission-nudge"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       PANEL: PHOTOS (memory wall + QR)
+       ======================================================== -->
+  <section role="tabpanel" id="panel-photos" aria-labelledby="tab-photos" hidden>
+    <div class="panel-section">
+      <div class="container">
+
+        <!-- Memory Wall -->
+        <div id="memory-wall" aria-labelledby="memory-wall-heading">
+          <div class="section-heading" style="justify-content:center">
+            <span class="emoji" aria-hidden="true">📸</span>
+            <h2 id="memory-wall-heading">Loading…</h2>
+          </div>
+          <div class="memory-body">
+            <p id="memory-wall-body">Loading…</p>
+            <p class="memory-subhead" id="memory-wall-subhead">Loading…</p>
+          </div>
+          <a href="#" class="btn btn--amber" id="memory-wall-btn" target="_blank" rel="noopener">Loading…</a>
+          <p class="memory-pending" id="memory-wall-pending" hidden>Loading…</p>
+        </div>
+
+        <!-- Share / QR -->
+        <div id="share" aria-labelledby="share-heading">
+          <div class="share-card">
+            <h2 id="share-heading">Loading…</h2>
+            <p id="share-body">Loading…</p>
+            <div id="qr-canvas" aria-label="QR code to this site"></div>
           </div>
         </div>
 
       </div>
-      <!-- 8c: Mission nudge -->
-      <p class="mission-nudge" id="mission-nudge"></p>
     </div>
   </section>
 
   <!-- ========================================================
-       9. MEMORY WALL
-       ======================================================== -->
-  <section id="memory-wall" aria-labelledby="memory-wall-heading">
-    <div class="container">
-      <div class="section-heading" style="justify-content:center">
-        <span class="emoji" aria-hidden="true">📸</span>
-        <h2 id="memory-wall-heading">Loading…</h2>
-      </div>
-      <div class="memory-body">
-        <p id="memory-wall-body">Loading…</p>
-        <p class="memory-subhead" id="memory-wall-subhead">Loading…</p>
-      </div>
-      <a href="#" class="btn btn--amber" id="memory-wall-btn" target="_blank" rel="noopener">Loading…</a>
-      <p class="memory-pending" id="memory-wall-pending" hidden>Loading…</p>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       10. SHARE (QR code)
-       ======================================================== -->
-  <section id="share" aria-labelledby="share-heading">
-    <div class="container">
-      <div class="share-card">
-        <h2 id="share-heading">Loading…</h2>
-        <p id="share-body">Loading…</p>
-        <canvas id="qr-canvas" width="200" height="200" aria-label="QR code for this site"></canvas>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       11. FOOTER
+       FOOTER
        ======================================================== -->
   <footer id="footer" class="site-footer" role="contentinfo">
     <p id="footer-campsite">Loading…</p>
