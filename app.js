@@ -80,6 +80,16 @@ function initTabs() {
     if (saved && KNOWN_SLUGS.includes(saved)) active = saved;
   }
 
+  function updateNavScrollState() {
+    const wrap = document.querySelector('.tab-nav-wrap');
+    const nav = document.querySelector('.tab-nav');
+    if (!wrap || !nav) return;
+    const left = nav.scrollLeft;
+    const max = nav.scrollWidth - nav.clientWidth;
+    wrap.classList.toggle('not-at-start', left > 4);
+    wrap.classList.toggle('at-end', left >= max - 4);
+  }
+
   function switchTab(slug) {
     KNOWN_SLUGS.forEach(s => {
       const btn = el('tab-' + s);
@@ -96,6 +106,7 @@ function initTabs() {
     });
     lsSet(ACTIVE_TAB_KEY, slug);
     history.replaceState(null, '', '#' + slug);
+    updateNavScrollState();
   }
 
   // Bind click handlers
@@ -108,6 +119,22 @@ function initTabs() {
 
   // Apply initial state
   switchTab(active);
+
+  // Scroll active tab into view on mobile
+  requestAnimationFrame(() => {
+    const activeBtn = document.querySelector('.tab-btn[aria-selected="true"]');
+    if (activeBtn && typeof activeBtn.scrollIntoView === 'function') {
+      activeBtn.scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
+    }
+    updateNavScrollState();
+  });
+
+  // Scroll + resize listeners for fade state
+  const navEl = document.querySelector('.tab-nav');
+  if (navEl) {
+    navEl.addEventListener('scroll', updateNavScrollState, { passive: true });
+  }
+  window.addEventListener('resize', updateNavScrollState, { passive: true });
 }
 
 /* ============================================================
@@ -115,7 +142,7 @@ function initTabs() {
    ============================================================ */
 function initHero() {
   const cfg = TEXT_CONFIG.hero;
-  const h = el('hero-title');
+  const h = el('hero-headline');
   const s = el('hero-subtitle');
   if (h) h.textContent = cfg.headline;
   if (s) s.textContent = cfg.subhead;
@@ -250,9 +277,11 @@ function initPeaks() {
         <div class="peaks-cards">
           ${g.items.map(item => `
             <a href="${esc(item.url)}" target="_blank" rel="noopener" class="peak-card">
-              ${item.image ? `<img loading="lazy" src="${esc(item.image)}" alt="">` : ''}
-              <strong>${esc(item.name)}</strong>
-              <span>${esc(item.desc)}</span>
+              <div class="peak-item">
+                ${item.image ? `<img class="peak-image" loading="lazy" decoding="async" src="${esc(item.image)}" alt="${esc(item.imageAlt || '')}">` : ''}
+                <strong>${esc(item.name)}</strong>
+                <span>${esc(item.desc)}</span>
+              </div>
             </a>
           `).join('')}
         </div>
@@ -766,6 +795,8 @@ function initFooter() {
   const campsiteEl = el('footer-campsite');
   const phoneEl = el('footer-phone');
   const winkEl = el('footer-wink');
+  const heroCreditEl = el('footer-hero-credit');
+  const peaksCreditEl = el('footer-peaks-credit');
 
   if (campsiteEl) {
     campsiteEl.innerHTML = `<a href="${esc(cfg.campsiteUrl)}" target="_blank" rel="noopener">${esc(cfg.campsiteLabel)}</a>`;
@@ -774,6 +805,8 @@ function initFooter() {
     phoneEl.innerHTML = `<a href="tel:${esc(cfg.campsitePhone)}">${esc(cfg.campsitePhone)}</a>`;
   }
   if (winkEl) winkEl.textContent = cfg.wink;
+  if (heroCreditEl && cfg.heroCredit) heroCreditEl.textContent = cfg.heroCredit;
+  if (peaksCreditEl && cfg.peaksCredit) peaksCreditEl.textContent = cfg.peaksCredit;
 }
 
 /* ============================================================

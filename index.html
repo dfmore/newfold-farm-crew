@@ -56,6 +56,7 @@
       <button role="tab" id="tab-kids" aria-controls="panel-kids" aria-selected="false" class="tab-btn">🎮 Kids' Corner</button>
       <button role="tab" id="tab-photos" aria-controls="panel-photos" aria-selected="false" class="tab-btn">📸 Photos</button>
     </nav>
+    <span class="tab-scroll-hint" aria-hidden="true">›</span>
   </div>
 
   <!-- ========================================================
@@ -65,8 +66,19 @@
 
     <!-- Hero -->
     <header id="hero" class="hero" role="banner">
+      <img
+        class="hero-bg"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Vale_of_Edale_from_Hollins_Cross.jpg/1280px-Vale_of_Edale_from_Hollins_Cross.jpg"
+        srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Vale_of_Edale_from_Hollins_Cross.jpg/800px-Vale_of_Edale_from_Hollins_Cross.jpg 800w,
+                https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Vale_of_Edale_from_Hollins_Cross.jpg/1280px-Vale_of_Edale_from_Hollins_Cross.jpg 1280w"
+        sizes="100vw"
+        alt=""
+        aria-hidden="true"
+        fetchpriority="high"
+      >
+      <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
-        <h1 id="hero-title">Loading…</h1>
+        <h1 id="hero-headline">Loading…</h1>
         <p id="hero-subtitle">Loading…</p>
       </div>
     </header>
@@ -270,6 +282,8 @@
     <p id="footer-campsite">Loading…</p>
     <p id="footer-phone">Loading…</p>
     <p class="footer-wink" id="footer-wink">Loading…</p>
+    <p class="footer-credit" id="footer-hero-credit"></p>
+    <p class="footer-credit" id="footer-peaks-credit"></p>
   </footer>
 
   <!-- QR code library (vendored, offline-reliable) -->
