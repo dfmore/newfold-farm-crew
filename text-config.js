@@ -45,6 +45,9 @@ const TEXT_CONFIG = {
     campsiteLabel: 'newfoldfarmedale.com',
     mapsUrl: 'https://maps.google.com/?q=Newfold+Farm+Edale+S33+7ZD',
     mapsLabel: 'Open in Google Maps',
+    w3w: '///preparing.swerving.defers',
+    w3wLabel: '///preparing.swerving.defers',
+    w3wUrl: 'https://w3w.co/preparing.swerving.defers',
   },
 
   // === WEATHER ===

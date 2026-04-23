@@ -209,6 +209,7 @@ function initGettingThere() {
     links.innerHTML = `
       <a href="${esc(cfg.campsiteUrl)}" target="_blank" rel="noopener" class="btn btn--outline btn--sm">${esc(cfg.campsiteLabel)}</a>
       <a href="${esc(cfg.mapsUrl)}" target="_blank" rel="noopener" class="btn btn--outline btn--sm">${esc(cfg.mapsLabel)}</a>
+      <a href="${esc(cfg.w3wUrl)}" target="_blank" rel="noopener" class="btn btn--outline btn--sm">${esc(cfg.w3wLabel)}</a>
     `;
   }
 }
