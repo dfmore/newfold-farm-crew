@@ -3,4 +3,7 @@ node_modules/
 Thumbs.db
 *.log
 .env
-.claude/session-snapshot.json
+
+# Keep internal planning / specs out of the public repo
+.claude/
+TODO.md

@@ -40,7 +40,7 @@ const TEXT_CONFIG = {
     campsite: 'Newfold Farm Edale',
     address: 'Edale, Hope Valley, S33 7ZD',
     pitch: 'Grouse Field',
-    arrival: 'Arrive from ~5pm Friday 1 May',
+    arrival: 'Arrive Friday afternoon, any time from mid-afternoon onwards.',
     campsiteUrl: 'https://www.newfoldfarmedale.com/',
     campsiteLabel: 'newfoldfarmedale.com',
     mapsUrl: 'https://maps.google.com/?q=Newfold+Farm+Edale+S33+7ZD',
@@ -67,29 +67,27 @@ const TEXT_CONFIG = {
     caveatFooter: 'Anything’s likely to change — keep an eye on the group chat.',
     days: [
       {
-        label: 'Friday evening',
+        label: 'Friday',
         items: [
-          'Arrive from ~5pm, pitch up.',
-          'Pasta night: Luke and Saul are pre-making the sauce and bringing it ready (fresh pasta + toms + cheese + sweetcorn, everyone piles in). Any dietary bits? Flag them in the group chat.',
+          'Arrive + settle in.',
         ],
       },
       {
         label: 'Saturday',
         items: [
-          'See how the day goes — walks, mooching, river, whatever takes.',
-          'Pizza night in the evening at the long table by the pizza oven. Adults drink, kids play (no destroying saplings).',
+          'Out in the Peaks.',
         ],
       },
       {
         label: 'Sunday',
         items: [
-          'Another day in the Peaks — long walks if the weather plays ball, quiet one if not. Mam Tor is there if people fancy it.',
+          'More time in the hills.',
         ],
       },
       {
         label: 'Monday',
         items: [
-          'Lazy breakfast, pack up, leave the pitch cleaner than we found it.',
+          'Pack up + head home.',
         ],
       },
     ],
