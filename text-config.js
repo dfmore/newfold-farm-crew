@@ -55,8 +55,8 @@ const TEXT_CONFIG = {
     heading: 'Check Before You Pack',
     intro: 'Peak District weather has opinions. Both are worth a glance the night before.',
     links: [
-      { label: 'Met Office — Edale', url: 'https://www.metoffice.gov.uk/weather/forecast/gcqqr04xf' },
-      { label: 'BBC Weather — Edale', url: 'https://www.bbc.co.uk/weather/2650416' },
+      { label: 'Met Office — Edale', url: 'https://weather.metoffice.gov.uk/forecast/gcqxwejpn' },
+      { label: 'yr.no — Edale', url: 'https://www.yr.no/en/forecast/daily-table/2-7297590/United%20Kingdom/England/Derbyshire/Edale' },
     ],
   },
 
