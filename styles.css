@@ -470,6 +470,23 @@ p:last-child { margin-bottom: 0; }
   gap: 10px;
 }
 
+.site-map-figure {
+  margin: 24px 0 0;
+}
+
+.site-map-img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.site-map-figure figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted, #666);
+  text-align: center;
+}
+
 .map-wrapper {
   margin-top: 24px;
   border-radius: 12px;
