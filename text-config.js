@@ -56,7 +56,7 @@ const TEXT_CONFIG = {
     intro: 'Peak District weather has opinions. Both are worth a glance the night before.',
     links: [
       { label: 'Met Office — Edale', url: 'https://weather.metoffice.gov.uk/forecast/gcqxwejpn' },
-      { label: 'yr.no — Edale', url: 'https://www.yr.no/en/forecast/daily-table/2-7297590/United%20Kingdom/England/Derbyshire/Edale' },
+      { label: 'MWIS — Peak District', url: 'https://www.mwis.org.uk/forecasts/english-and-welsh/peak-district' },
     ],
   },
 
