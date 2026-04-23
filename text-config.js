@@ -64,30 +64,33 @@ const TEXT_CONFIG = {
   plan: {
     heading: 'The Plan',
     prelude: 'Rough plan. Most of it will evolve — the group chat is the source of truth.',
-    caveatFooter: 'Anything’s likely to change — keep an eye on the group chat.',
     days: [
       {
         label: 'Friday',
         items: [
-          'Arrive + settle in.',
+          'Arrive and pitch up late afternoon.',
+          'Group dinner at camp once the tents are sorted.',
         ],
       },
       {
         label: 'Saturday',
         items: [
-          'Out in the Peaks.',
+          'Out in the hills or down in the valley, whichever the weather rewards.',
+          'Evening together at camp.',
         ],
       },
       {
         label: 'Sunday',
         items: [
-          'More time in the hills.',
+          "A bigger walk if it's dry, something gentler if not.",
+          'Pub option in the evening.',
         ],
       },
       {
         label: 'Monday',
         items: [
-          'Pack up + head home.',
+          'Slow breakfast.',
+          'Pack up and head off after lunch.',
         ],
       },
     ],
@@ -110,21 +113,21 @@ const TEXT_CONFIG = {
             name: 'Edale Circular',
             desc: 'Walkable from camp, valley-level, 1–1.5h. Packhorse bridge kids remember.',
             url: 'https://www.nationaltrust.org.uk/visit/peak-district-derbyshire/kinder-edale-and-the-high-peak/edale-circular-walk',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Vale_of_Edale_from_Hollins_Cross.jpg/640px-Vale_of_Edale_from_Hollins_Cross.jpg',
+            image: 'assets/peaks/vale-of-edale-640.jpg',
             imageAlt: 'View down Vale of Edale from Hollins Cross.',
           },
           {
             name: 'Grindsbrook Clough',
             desc: 'From camp or a 5-min drive. Proper stream walking — expect wet feet.',
             url: 'https://peakdistrictwalks.net/best-walks-from-edale-peak-district/',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Grindsbrook_Clough_-_geograph.org.uk_-_1898755.jpg/640px-Grindsbrook_Clough_-_geograph.org.uk_-_1898755.jpg',
+            image: 'assets/peaks/grindsbrook-clough-640.jpg',
             imageAlt: 'Stream-cut valley of Grindsbrook Clough above Edale.',
           },
           {
             name: 'Mam Tor — “The Shivering Mountain”',
             desc: 'Drive to footpath, easy-ish climb, huge views. The hill slips from shale underneath.',
             url: 'https://visitpeakdistrict.com/business-directory/mam-tor-shivering-mountain',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Mam_Tor_Castleton.jpg/640px-Mam_Tor_Castleton.jpg',
+            image: 'assets/peaks/mam-tor-640.jpg',
             imageAlt: 'Mam Tor ridge above Castleton.',
           },
         ],
@@ -151,14 +154,14 @@ const TEXT_CONFIG = {
             name: 'Speedwell Cavern',
             desc: 'Underground boat trip through a flooded lead mine. Age 5+, 106 wet steps. £16/£9, book ahead.',
             url: 'https://peakdistrictkids.co.uk/speedwell-cavern/',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Castleton%2C_Entrance_to_Speedwell_Cavern_-_geograph.org.uk_-_3989703.jpg',
+            image: 'assets/peaks/speedwell-cavern-640.jpg',
             imageAlt: 'Entrance to Speedwell Cavern in Castleton.',
           },
           {
             name: 'Castleton village',
             desc: 'Free alternative. Ice cream, river paddle, mooching. Rainy-afternoon rescue.',
             url: 'https://maps.google.com/?q=Castleton+village+Derbyshire',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Castleton%2C_Derbyshire_-_geograph.org.uk_-_682874.jpg',
+            image: 'assets/peaks/castleton-village-640.jpg',
             imageAlt: 'Castleton village in Derbyshire.',
           },
           {

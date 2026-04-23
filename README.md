@@ -30,6 +30,12 @@ npm run build:assets
 
 This renders `assets/og-source.svg` and `assets/favicon-source.svg` into all required PNG/ICO formats and writes `assets/site.webmanifest`.
 
+```
+npm run fetch:images
+```
+
+Re-downloads the five Wikimedia Commons originals and resizes them to `assets/peaks/{slug}-640.jpg` and `assets/peaks/{slug}-1280.jpg`. Run this if you want to swap or refresh the peak photos. Attribution table is written to `assets/peaks/CREDITS.md`.
+
 ## Deployment
 
 GitHub Pages from the `main` branch root. Push to `main` → Pages publishes in ~2 minutes.

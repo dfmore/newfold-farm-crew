@@ -240,11 +240,8 @@ function initPlan() {
   const heading = el('plan-heading');
   const list = el('plan-list');
   const prelude = el('plan-prelude');
-  const caveat = el('plan-caveat');
-
   if (heading) heading.textContent = cfg.heading;
   if (prelude) prelude.textContent = cfg.prelude || '';
-  if (caveat) caveat.textContent = cfg.caveatFooter || '';
 
   if (list) {
     list.innerHTML = cfg.days.map(d => {

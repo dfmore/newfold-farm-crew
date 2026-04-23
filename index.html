@@ -68,9 +68,9 @@
     <header id="hero" class="hero" role="banner">
       <img
         class="hero-bg"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Vale_of_Edale_from_Hollins_Cross.jpg/1280px-Vale_of_Edale_from_Hollins_Cross.jpg"
-        srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Vale_of_Edale_from_Hollins_Cross.jpg/800px-Vale_of_Edale_from_Hollins_Cross.jpg 800w,
-                https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Vale_of_Edale_from_Hollins_Cross.jpg/1280px-Vale_of_Edale_from_Hollins_Cross.jpg 1280w"
+        src="assets/peaks/vale-of-edale-1280.jpg"
+        srcset="assets/peaks/vale-of-edale-640.jpg 640w,
+                assets/peaks/vale-of-edale-1280.jpg 1280w"
         sizes="100vw"
         alt=""
         aria-hidden="true"
@@ -85,8 +85,10 @@
 
     <!-- Today's Mission -->
     <div id="mission" aria-labelledby="mission-heading">
-      <h2 id="mission-heading">Loading…</h2>
-      <p class="mission-text" id="mission-text">Loading…</p>
+      <div class="container">
+        <h2 id="mission-heading">Loading…</h2>
+        <p class="mission-text" id="mission-text">Loading…</p>
+      </div>
     </div>
 
     <!-- The Plan -->
@@ -100,7 +102,6 @@
         <ul class="plan-list" id="plan-list" aria-label="Itinerary">
           <!-- populated by JS -->
         </ul>
-        <p class="disclaimer-note" id="plan-caveat" role="note"></p>
       </div>
     </div>
 
