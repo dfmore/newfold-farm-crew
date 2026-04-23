@@ -45,9 +45,6 @@ const TEXT_CONFIG = {
     campsiteLabel: 'newfoldfarmedale.com',
     mapsUrl: 'https://maps.google.com/?q=Newfold+Farm+Edale+S33+7ZD',
     mapsLabel: 'Open in Google Maps',
-    w3w: '///fills.remove.ropes',
-    w3wLabel: 'what3words: ///fills.remove.ropes',
-    w3wUrl: 'https://w3w.co/fills.remove.ropes',
   },
 
   // === WEATHER ===
@@ -101,7 +98,7 @@ const TEXT_CONFIG = {
     heading: 'Worth Doing Nearby',
     flavour: [
       '📜 Edale = Old English “water valley”. The village is made of five historic **Booths** — 13th-century shepherd shelters that grew into hamlets.',
-      '🪨 Peep at the dry stone walls — many stones hide 300-million-year-old fossils from when the Peaks were a tropical sea. Free paleontology.',
+      '🪨 The dry stone walls are Millstone Grit — sandstone laid down by huge Carboniferous rivers ~320 million years ago. Some faces still show the ripple marks.',
       '🚶 Kinder Mass Trespass, 1932 — walkers marched up the moors to claim the right to roam. You’re enjoying the dividend.',
       '⛰️ England’s first organised mountain rescue team formed near here in 1928, after an accident on Laddow Rocks.',
     ],
@@ -111,7 +108,7 @@ const TEXT_CONFIG = {
         items: [
           {
             name: 'Edale Circular',
-            desc: 'Walkable from camp, valley-level, 1–1.5h. Packhorse bridge kids remember.',
+            desc: 'Walkable from camp, valley-level, 1.5–2h. Stone bridges, streams, sheep.',
             url: 'https://www.nationaltrust.org.uk/visit/peak-district-derbyshire/kinder-edale-and-the-high-peak/edale-circular-walk',
             image: 'assets/peaks/vale-of-edale-640.jpg',
             imageAlt: 'View down Vale of Edale from Hollins Cross.',
@@ -137,7 +134,7 @@ const TEXT_CONFIG = {
         items: [
           {
             name: 'The Rambler Inn',
-            desc: 'Walkable from camp. Beer garden, kids’ play area, home-cooked food.',
+            desc: 'Walkable from camp. Beer garden, family-friendly rooms, home-cooked food.',
             url: 'https://www.dorbiere.co.uk/the-rambler-inn/',
           },
           {
@@ -152,8 +149,8 @@ const TEXT_CONFIG = {
         items: [
           {
             name: 'Speedwell Cavern',
-            desc: 'Underground boat trip through a flooded lead mine. Age 5+, 106 wet steps. £16/£9, book ahead.',
-            url: 'https://peakdistrictkids.co.uk/speedwell-cavern/',
+            desc: 'Underground boat trip through a flooded 1770s lead mine. 106 wet steps each way; under-5s ride free on a lap. Book ahead.',
+            url: 'https://speedwellcavern.co.uk/ticket-prices/',
             image: 'assets/peaks/speedwell-cavern-640.jpg',
             imageAlt: 'Entrance to Speedwell Cavern in Castleton.',
           },
@@ -163,11 +160,6 @@ const TEXT_CONFIG = {
             url: 'https://maps.google.com/?q=Castleton+village+Derbyshire',
             image: 'assets/peaks/castleton-village-640.jpg',
             imageAlt: 'Castleton village in Derbyshire.',
-          },
-          {
-            name: 'Chestnut Centre Wildlife Park',
-            desc: 'Otters and owls. Wet-day backup.',
-            url: 'https://www.chestnutcentre.co.uk/',
           },
         ],
       },
