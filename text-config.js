@@ -40,7 +40,7 @@ const TEXT_CONFIG = {
     campsite: 'Newfold Farm Edale',
     address: 'Edale, Hope Valley, S33 7ZD',
     pitch: 'Grouse Field',
-    arrival: 'Arrive Friday afternoon, any time from mid-afternoon onwards.',
+    arrival: 'Arrive Friday around 5pm.',
     campsiteUrl: 'https://www.newfoldfarmedale.com/',
     campsiteLabel: 'newfoldfarmedale.com',
     mapsUrl: 'https://maps.google.com/?q=Newfold+Farm+Edale+S33+7ZD',
@@ -65,15 +65,15 @@ const TEXT_CONFIG = {
       {
         label: 'Friday',
         items: [
-          'Arrive and pitch up late afternoon.',
-          'Group dinner at camp once the tents are sorted.',
+          'Arrive and pitch up around 5pm.',
+          'Pasta night at camp.',
         ],
       },
       {
         label: 'Saturday',
         items: [
           'Out in the hills or down in the valley, whichever the weather rewards.',
-          'Evening together at camp.',
+          'Pizza night at camp.',
         ],
       },
       {
