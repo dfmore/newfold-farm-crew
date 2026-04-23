@@ -374,12 +374,12 @@ const TEXT_CONFIG = {
 
   // === FOOTER ===
   footer: {
-    campsiteLabel: ‘Newfold Farm Edale’,
-    campsiteUrl: ‘https://www.newfoldfarmedale.com/’,
-    campsitePhone: ‘01433 670310’,
-    wink: ‘Built for t’ group chat.’,
-    heroCredit: ‘Hero photo by Donnchadh H, via Wikimedia Commons, CC BY 2.0.’,
-    peaksCredit: ‘Peak photos via Wikimedia Commons (various contributors, CC BY / CC BY-SA / Attribution).’,
+    campsiteLabel: 'Newfold Farm Edale',
+    campsiteUrl: 'https://www.newfoldfarmedale.com/',
+    campsitePhone: '01433 670310',
+    wink: "Built for t' group chat.",
+    heroCredit: 'Hero photo by Donnchadh H, via Wikimedia Commons, CC BY 2.0.',
+    peaksCredit: 'Peak photos via Wikimedia Commons (various contributors, CC BY / CC BY-SA / Attribution).',
   },
 };
 
