@@ -16,13 +16,13 @@ const TEXT_CONFIG = {
 
   // === HERO ===
   hero: {
-    headline: "Ey up — we’re off to Edale",
+    headline: "Ey up — we're off to Edale",
     subhead: 'Newfold Farm · 1–4 May 2026 · Grouse Field',
   },
 
   // === TODAY'S MISSION ===
   mission: {
-    heading: "Today’s Mission",
+    heading: "Today's Mission",
     // Keyed by YYYY-MM-DD in local time
     days: {
       '2026-05-01': 'Find a Y-shaped stick.',
@@ -102,8 +102,8 @@ const TEXT_CONFIG = {
     flavour: [
       '📜 Edale = Old English “water valley”. The village is made of five historic **Booths** — 13th-century shepherd shelters that grew into hamlets.',
       '🪨 The dry stone walls are Millstone Grit — sandstone laid down by huge Carboniferous rivers ~320 million years ago. Some faces still show the ripple marks.',
-      '🚶 Kinder Mass Trespass, 1932 — walkers marched up the moors to claim the right to roam. You’re enjoying the dividend.',
-      '⛰️ England’s first organised mountain rescue team formed near here in 1928, after an accident on Laddow Rocks.',
+      '🚶 Kinder Mass Trespass, 1932 — walkers marched up the moors to claim the right to roam. You're enjoying the dividend.',
+      '⛰️ England's first organised mountain rescue team formed near here in 1928, after an accident on Laddow Rocks.',
     ],
     groups: [
       {
@@ -143,11 +143,11 @@ const TEXT_CONFIG = {
             imageAlt: 'The Rambler Inn pub in Edale.',
           },
           {
-            name: "Old Nag’s Head (trivia)",
-            desc: ‘Opposite the Rambler. Official start of the Pennine Way — since 1577.’,
-            url: ‘https://maps.google.com/?q=Old+Nags+Head+Edale’,
-            image: ‘assets/peaks/old-nags-head-640.jpg’,
-            imageAlt: "Interior of the Old Nag’s Head pub in Edale.",
+            name: "Old Nag's Head (trivia)",
+            desc: 'Opposite the Rambler. Official start of the Pennine Way — since 1577.',
+            url: 'https://maps.google.com/?q=Old+Nags+Head+Edale',
+            image: 'assets/peaks/old-nags-head-640.jpg',
+            imageAlt: "Interior of the Old Nag's Head pub in Edale.",
           },
         ],
       },
@@ -182,8 +182,8 @@ const TEXT_CONFIG = {
   // === KIDS' CORNER (parent heading + shared copy) ===
   kidsCorner: {
     heading: "Kids' Corner",
-    disclaimer: "📱 One phone, one game. Bingo cards and welly ratings live on this device only — they don’t sync between parents. Pass the phone around if you’re playing together.",
-    missionNudge: 'See today’s mission at the top ↑',
+    disclaimer: "📱 One phone, one game. Bingo cards and welly ratings live on this device only — they don't sync between parents. Pass the phone around if you're playing together.",
+    missionNudge: 'See today's mission at the top ↑',
   },
 
   // === NATURE BINGO ===
@@ -191,7 +191,7 @@ const TEXT_CONFIG = {
     heading: 'Nature Bingo',
     emptyState: 'Nowt spotted yet — eyes peeled.',
     fullCard: 'Grand! Full card.',
-    reshuffleLabel: "Shake for a new ‘un",
+    reshuffleLabel: "Shake for a new 'un",
     storageKeyPrefix: 'newfold:bingo:',
     pool: [
       { id: 'b-sheep', label: '🐑 A sheep with a black face (Swaledale)' },
@@ -205,9 +205,9 @@ const TEXT_CONFIG = {
       { id: 'b-stream', label: '🌊 A stream crossing' },
       { id: 'b-cloud', label: '☁️ A cloud shaped like something' },
       { id: 'b-raptor', label: '🦅 A bird of prey' },
-      { id: 'b-cow', label: '🐄 A cow (stay chill, don’t get close)' },
+      { id: 'b-cow', label: '🐄 A cow (stay chill, don't get close)' },
       { id: 'b-tree', label: '🌲 A tree older than you think' },
-      { id: 'b-boot', label: '🥾 Someone else’s muddy boot' },
+      { id: 'b-boot', label: '🥾 Someone else's muddy boot' },
       { id: 'b-signpost', label: '🗺️ A trail signpost' },
       { id: 'b-mamtor', label: '🏔️ Mam Tor (the big one)' },
       { id: 'b-campfire', label: '🔥 A real campfire' },
@@ -219,8 +219,8 @@ const TEXT_CONFIG = {
   squelch: {
     heading: 'Squelch-o-Meter',
     subhead: 'Who got muddiest?',
-    emptyPrompt: 'Add the kids once you know who’s turned up.',
-    addPlaceholder: 'Kid’s name',
+    emptyPrompt: 'Add the kids once you know who's turned up.',
+    addPlaceholder: 'Kid's name',
     addLabel: 'Add a camper',
     ratingLabel: 'Welly points',
     removeLabel: 'Remove',
