@@ -144,8 +144,10 @@ const TEXT_CONFIG = {
           },
           {
             name: "Old Nag’s Head (trivia)",
-            desc: 'Opposite the Rambler. Official start of the Pennine Way — since 1577.',
-            url: 'https://maps.google.com/?q=Old+Nags+Head+Edale',
+            desc: ‘Opposite the Rambler. Official start of the Pennine Way — since 1577.’,
+            url: ‘https://maps.google.com/?q=Old+Nags+Head+Edale’,
+            image: ‘assets/peaks/old-nags-head-640.jpg’,
+            imageAlt: "Interior of the Old Nag’s Head pub in Edale.",
           },
         ],
       },
