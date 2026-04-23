@@ -139,6 +139,8 @@ const TEXT_CONFIG = {
             name: 'The Rambler Inn',
             desc: 'Walkable from camp. Beer garden, family-friendly rooms, home-cooked food.',
             url: 'https://www.dorbiere.co.uk/the-rambler-inn/',
+            image: 'assets/peaks/rambler-inn-640.jpg',
+            imageAlt: 'The Rambler Inn pub in Edale.',
           },
           {
             name: "Old Nag’s Head (trivia)",
